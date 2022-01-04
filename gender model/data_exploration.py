@@ -7,3 +7,5 @@ files = [f.split("_") for f in listdir(mypath) if isfile(join(mypath, f))]
 
 df = pd.DataFrame(files, columns = ['Age', 'Gender', 'Race', 'Time Taken'])
 print(df)
+
+df2 = df.loc[(df['Gender'] == '0') | (df['Gender'] == '1')]
