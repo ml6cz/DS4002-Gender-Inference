@@ -2,8 +2,8 @@ import shutil
 import os
 
 basdir = "/Users/megan/Documents/4th Year/DS 4002/Week 1/gender model/crop_images"
-newdir = "/Users/megan/Documents/4th Year/DS 4002/Week 1/gender model/Gender"
-mapping={"0": "Male", "1": "Female"}
+newdir = "/Users/megan/Documents/4th Year/DS 4002/Week 1/gender model/Race"
+mapping={"0": "White", "1": "Black", "2": "Asian", "3": "Indian", "4":"Others"}
 #Make a new folder if the folder does not exist
 for key in mapping.keys():
     subfolder = mapping[key]
@@ -25,7 +25,7 @@ for root, dirs, files in os.walk(basdir):
         base, extension = os.path.splitext(filename)
         details = base.split("_")
         
-        gender = details[1]
+        gender = details[2]
         
         #if it is not one of the values we defined a mapping for
         if gender not in mapping.keys():
