@@ -11,3 +11,7 @@ print(df)
 df2 = df.loc[(df['Gender'] == '0') | (df['Gender'] == '1')]
 df2.loc[:, 'Age'] = df2['Age'].astype(int)
 df2 = df2.loc[(df2['Age'] >= 0) & (df2['Age'] <= 116)]
+
+df3 = df2
+bins= [0]+list(range(4,85,5))+[116]
+df3['Age Range'] = pd.cut(df3['Age'], bins=bins, right=False)
