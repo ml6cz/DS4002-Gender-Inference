@@ -33,6 +33,6 @@ for root, dirs, files in os.walk(basdir):
             continue
         
         # Initial new name
-        new_name = os.path.join(newdir, mapping[gender], base)
+        new_name = os.path.join(newdir, mapping[gender], base+ extension)
         
         shutil.copy(old_name, new_name)
